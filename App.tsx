@@ -1,5 +1,5 @@
 /* eslint-disable camelcase */
-import { Text, View, StatusBar } from 'react-native'
+import { View, StatusBar } from 'react-native'
 import { NativeBaseProvider } from 'native-base'
 import {
   useFonts,
@@ -7,16 +7,20 @@ import {
   Urbanist_400Regular,
 } from '@expo-google-fonts/dev'
 
+import { THEME } from './src/theme'
+import { Loading } from '@components/Loading'
+
 export default function App() {
   const [fontsLoaded] = useFonts({ Urbanist_700Bold, Urbanist_400Regular })
   return (
-    <NativeBaseProvider>
+    <NativeBaseProvider theme={THEME}>
       <StatusBar
         barStyle="dark-content"
         backgroundColor="transparent"
         translucent
       />
-      {fontsLoaded ? <View /> : <View />}
+      {/* {fontsLoaded ? <View /> : <View />} */}
+      <Loading />
     </NativeBaseProvider>
   )
 }

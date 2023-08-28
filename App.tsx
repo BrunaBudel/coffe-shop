@@ -1,5 +1,6 @@
 /* eslint-disable camelcase */
 import { Text, View, StatusBar } from 'react-native'
+import { NativeBaseProvider } from 'native-base'
 import {
   useFonts,
   Urbanist_700Bold,
@@ -9,17 +10,13 @@ import {
 export default function App() {
   const [fontsLoaded] = useFonts({ Urbanist_700Bold, Urbanist_400Regular })
   return (
-    <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center' }}>
+    <NativeBaseProvider>
       <StatusBar
         barStyle="dark-content"
         backgroundColor="transparent"
         translucent
       />
-      {fontsLoaded ? (
-        <Text>Open up App.tsx to start working on your app!</Text>
-      ) : (
-        <View />
-      )}
-    </View>
+      {fontsLoaded ? <View /> : <View />}
+    </NativeBaseProvider>
   )
 }

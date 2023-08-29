@@ -7,7 +7,7 @@ export function Loading() {
     <VStack flex={1} justifyContent="center" space={12}>
       <Center>
         <Image source={Logo} alt="Caffely" size="xl" />
-        <Text fontSize="4xl" fontFamily="bold">
+        <Text fontSize="4xl" fontFamily="text" fontWeight="700">
           Caffely
         </Text>
       </Center>

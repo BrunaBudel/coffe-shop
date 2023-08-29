@@ -1,11 +1,12 @@
-import { Spinner, Center, Text, VStack, Image, HStack } from 'native-base'
+import { Text, VStack, Image, HStack } from 'native-base'
 
 import Coffe from '@assets/coffe.png'
 
 export function BannerHome() {
   return (
     <HStack
-      margin={8}
+      marginX={8}
+      marginBottom={4}
       px="4"
       py="8"
       borderRadius={12}

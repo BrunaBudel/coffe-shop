@@ -14,6 +14,7 @@ export const CoffeeShopCard: React.FC<ICoffeeShopsProps> = ({ data }) => {
       justifyContent="center"
       space={1}
       marginRight={6}
+      marginBottom={4}
       width={150}
     >
       <Box>

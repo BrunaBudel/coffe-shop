@@ -1,10 +1,11 @@
 import React from 'react'
-import { HStack, ScrollView, Text, VStack } from 'native-base'
+import { FlatList, HStack, ScrollView, Text, VStack } from 'native-base'
 import { Header } from '@components/Header'
 import { BannerHome } from '@components/BannerHome'
 
 import ArrowRight from '@assets/arrow-right.svg'
 import { CoffeeShopCard } from '@components/CoffeeShopCard'
+import { coffeeShops } from '@mocks/index.ts'
 
 export function Home() {
   return (
@@ -28,7 +29,15 @@ export function Home() {
             <ArrowRight width={20} height={20} />
           </HStack>
         </HStack>
-        <CoffeeShopCard />
+        <FlatList
+          data={coffeeShops}
+          renderItem={({ item }) => <CoffeeShopCard data={item} />}
+          keyExtractor={(item: ICoffeeShops) => item.id.toString()}
+          horizontal
+          showsHorizontalScrollIndicator={false}
+          paddingLeft={8}
+          paddingTop={3}
+        />
       </ScrollView>
     </VStack>
   )

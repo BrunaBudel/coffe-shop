@@ -1,6 +1,6 @@
 import { Text, VStack, Image, HStack } from 'native-base'
 
-import Coffe from '@assets/coffe.png'
+import Coffee from '@assets/coffee.png'
 
 export function BannerHome() {
   return (
@@ -24,7 +24,7 @@ export function BannerHome() {
           Aproveite um desconto fantástico em todos os produtos da loja!
         </Text>
       </VStack>
-      <Image source={Coffe} alt="coffe" size="xl" />
+      <Image source={Coffee} alt="coffee" size="xl" />
     </HStack>
   )
 }

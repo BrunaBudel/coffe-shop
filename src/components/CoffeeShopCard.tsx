@@ -3,16 +3,26 @@ import { Text, VStack, Image, HStack, Box } from 'native-base'
 import Location from '@assets/location.svg'
 import Star from '@assets/star.svg'
 
-export function CoffeeShopCard({ name, distance, rate, img }: ICoffeeShops) {
+interface ICoffeeShopsProps {
+  data: ICoffeeShops
+}
+
+export const CoffeeShopCard: React.FC<ICoffeeShopsProps> = ({ data }) => {
   return (
-    <VStack flex={1} justifyContent="center" space={1}>
+    <VStack
+      flex={1}
+      justifyContent="center"
+      space={1}
+      marginRight={6}
+      width={150}
+    >
       <Box>
         <Image
           source={{
-            uri: `${img}`,
+            uri: data.img,
           }}
           alt="coffe"
-          size="xl"
+          size="2xl"
           borderRadius={12}
         />
         <HStack
@@ -28,17 +38,17 @@ export function CoffeeShopCard({ name, distance, rate, img }: ICoffeeShops) {
         >
           <Star width={12} height={12} />
           <Text fontSize="sm" fontFamily="text" fontWeight="700" color="white">
-            {rate}
+            {data?.rate}
           </Text>
         </HStack>
       </Box>
       <Text fontSize="md" fontFamily="text" fontWeight="700" color="black">
-        {name}
+        {data?.name}
       </Text>
       <HStack>
         <Location width={20} height={20} />
         <Text fontSize="sm" fontFamily="text" fontWeight="400" color="black">
-          {distance}
+          {data?.distance} km
         </Text>
       </HStack>
     </VStack>

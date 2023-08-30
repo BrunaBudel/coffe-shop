@@ -15,7 +15,7 @@ export function Home(props: {
     props.navigation.navigate('CoffeeShop')
   }
   return (
-    <VStack>
+    <VStack safeAreaBottom>
       <Header />
       <ScrollView h={'full'}>
         <BannerHome />

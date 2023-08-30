@@ -6,6 +6,7 @@ import {
   faArrowLeftLong,
 } from '@fortawesome/free-solid-svg-icons'
 import { useState } from 'react'
+import ShareBtn from './ShareBtn'
 
 interface ICoffeeShopInfoBannerProps {
   goBack: () => void
@@ -50,9 +51,7 @@ export function CoffeeShopInfoBanner({ goBack }: ICoffeeShopInfoBannerProps) {
               />
             </Circle>
           </Pressable>
-          <Circle p={2} bg={'gray.300'}>
-            <FontAwesomeIcon icon={faShareNodes} size={24} color="white" />
-          </Circle>
+          <ShareBtn />
         </HStack>
       </HStack>
     </Box>

@@ -8,7 +8,12 @@ import { coffeeShops, Drinks } from '@mocks/index.ts'
 import { SwiperTitle } from '@components/SwiperTitle'
 import { CoffeeCard } from '@components/CoffeeCard'
 
-export function Home() {
+export function Home(props: {
+  navigation: { navigate: (arg0: string) => void }
+}) {
+  function handleCoffeShopInfo() {
+    props.navigation.navigate('CoffeeShop')
+  }
   return (
     <VStack>
       <Header />
@@ -17,7 +22,9 @@ export function Home() {
         <SwiperTitle title="Cafeterias por perto" />
         <FlatList
           data={coffeeShops}
-          renderItem={({ item }) => <CoffeeShopCard data={item} />}
+          renderItem={({ item }) => (
+            <CoffeeShopCard data={item} navigate={handleCoffeShopInfo} />
+          )}
           keyExtractor={(item: ICoffeeShops) => item.id.toString()}
           horizontal
           showsHorizontalScrollIndicator={false}

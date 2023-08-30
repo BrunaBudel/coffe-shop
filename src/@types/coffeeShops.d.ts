@@ -2,6 +2,6 @@ interface ICoffeeShops {
   id: number
   name: string
   distance: number
-  rate: number
+  rating: number
   img: string
 }

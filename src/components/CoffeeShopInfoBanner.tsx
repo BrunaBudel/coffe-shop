@@ -1,10 +1,6 @@
 import { Image, HStack, Box, AspectRatio, Circle, Pressable } from 'native-base'
 import { FontAwesomeIcon } from '@fortawesome/react-native-fontawesome'
-import {
-  faHeart,
-  faShareNodes,
-  faArrowLeftLong,
-} from '@fortawesome/free-solid-svg-icons'
+import { faHeart, faArrowLeftLong } from '@fortawesome/free-solid-svg-icons'
 import { useState } from 'react'
 import ShareBtn from './ShareBtn'
 

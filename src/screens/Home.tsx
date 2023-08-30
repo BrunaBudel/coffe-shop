@@ -1,6 +1,6 @@
 import React from 'react'
 import { FlatList, ScrollView, View, VStack } from 'native-base'
-import { Header } from '@components/Header'
+import { HeaderHome } from '@components/HeaderHome'
 import { BannerHome } from '@components/BannerHome'
 
 import { CoffeeShopCard } from '@components/CoffeeShopCard'
@@ -16,7 +16,7 @@ export function Home(props: {
   }
   return (
     <VStack safeAreaBottom>
-      <Header />
+      <HeaderHome />
       <ScrollView h={'full'}>
         <BannerHome />
         <SwiperTitle title="Cafeterias por perto" />

@@ -50,7 +50,7 @@ export const CoffeeShopCard: React.FC<ICoffeeShopsProps> = ({
                 fontWeight="700"
                 color="white"
               >
-                {data?.rate}
+                {data?.rating}
               </Text>
             </HStack>
           </Box>

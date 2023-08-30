@@ -8,6 +8,7 @@ import {
   HStack,
   ScrollView,
   View,
+  Pressable,
 } from 'native-base'
 import { CoffeeShopInfoBanner } from '@components/CoffeeShopInfoBanner'
 import { CommonActions } from '@react-navigation/native'
@@ -20,6 +21,9 @@ import Location from '@assets/location.svg'
 import Star from '@assets/star.svg'
 
 export function CoffeeShop({ navigation }) {
+  function handleRatingPage() {
+    navigation.navigate('RatingPage')
+  }
   function handleGoBack() {
     navigation.dispatch(CommonActions.goBack())
   }
@@ -48,34 +52,36 @@ export function CoffeeShop({ navigation }) {
               Coffee Shop
             </Text>
           </Center>
-          <HStack
-            justifyContent="space-between"
-            alignItems="center"
-            paddingBottom={4}
-            borderBottomWidth={2}
-            borderBottomColor={'gray.200'}
-          >
-            <HStack space={2} alignItems="center">
-              <Star width={24} height={24} />
-              <Text
-                fontSize="lg"
-                fontFamily="text"
-                fontWeight="700"
-                color="black"
-              >
-                4.3
-              </Text>
-              <Text
-                fontSize="sm"
-                fontFamily="text"
-                fontWeight="400"
-                color="gray.400"
-              >
-                (2.5k avaliações)
-              </Text>
+          <Pressable onPress={handleRatingPage}>
+            <HStack
+              justifyContent="space-between"
+              alignItems="center"
+              paddingBottom={4}
+              borderBottomWidth={2}
+              borderBottomColor={'gray.200'}
+            >
+              <HStack space={2} alignItems="center">
+                <Star width={24} height={24} />
+                <Text
+                  fontSize="lg"
+                  fontFamily="text"
+                  fontWeight="700"
+                  color="black"
+                >
+                  4.5
+                </Text>
+                <Text
+                  fontSize="sm"
+                  fontFamily="text"
+                  fontWeight="400"
+                  color="gray.400"
+                >
+                  (2.5k avaliações)
+                </Text>
+              </HStack>
+              <FontAwesomeIcon icon={faChevronRight} color="#71717a" />
             </HStack>
-            <FontAwesomeIcon icon={faChevronRight} color="#71717a" />
-          </HStack>
+          </Pressable>
           <HStack
             justifyContent="space-between"
             alignItems="center"

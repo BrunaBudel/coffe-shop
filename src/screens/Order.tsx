@@ -22,7 +22,7 @@ import {
 } from 'native-base'
 import { useState } from 'react'
 
-export function Order({ navigation }) {
+export function Order({ navigation }: { navigation: any }) {
   const [quantity, setQuantity] = useState(1)
   function handleGoBack() {
     navigation.dispatch(CommonActions.goBack())

@@ -20,7 +20,7 @@ import { Drinks } from '@mocks/index'
 import Location from '@assets/location.svg'
 import Star from '@assets/star.svg'
 
-export function CoffeeShop({ navigation }) {
+export function CoffeeShop({ navigation }: { navigation: any }) {
   function handleRatingPage() {
     navigation.navigate('RatingPage')
   }

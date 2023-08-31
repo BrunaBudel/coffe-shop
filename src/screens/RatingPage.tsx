@@ -5,7 +5,7 @@ import { faStar, faStarHalfStroke } from '@fortawesome/free-solid-svg-icons'
 import { FontAwesomeIcon } from '@fortawesome/react-native-fontawesome'
 import { comments } from '@mocks/index'
 import { CommonActions } from '@react-navigation/native'
-import { Center, FlatList, HStack, ScrollView, Text, VStack } from 'native-base'
+import { Center, FlatList, HStack, Text, VStack } from 'native-base'
 
 const Rating = [
   {
@@ -30,7 +30,7 @@ const Rating = [
   },
 ]
 
-export function RatingPage({ navigation }) {
+export function RatingPage({ navigation }: { navigation: any }) {
   function ratingAverage() {
     const totalReviews = Rating.reduce((acc, item) => {
       return acc + item.totalReviews

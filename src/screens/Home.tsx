@@ -14,6 +14,9 @@ export function Home(props: {
   function handleCoffeShopInfo() {
     props.navigation.navigate('CoffeeShop')
   }
+  function handleOpenOrderPage() {
+    props.navigation.navigate('Order')
+  }
   return (
     <VStack safeAreaBottom>
       <HeaderHome />
@@ -41,7 +44,11 @@ export function Home(props: {
           paddingBottom={200}
         >
           {Drinks.map((item: ICoffeeDrinks) => (
-            <CoffeeCard key={item.id} data={item} />
+            <CoffeeCard
+              key={item.id}
+              data={item}
+              navigate={handleOpenOrderPage}
+            />
           ))}
         </View>
       </ScrollView>

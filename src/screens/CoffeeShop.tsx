@@ -15,7 +15,7 @@ import { CommonActions } from '@react-navigation/native'
 import { FontAwesomeIcon } from '@fortawesome/react-native-fontawesome'
 import { faChevronRight, faPercent } from '@fortawesome/free-solid-svg-icons'
 import { CoffeeCard } from '@components/CoffeeCard'
-import { Drinks } from '@mocks/index.ts'
+import { Drinks } from '@mocks/index'
 
 import Location from '@assets/location.svg'
 import Star from '@assets/star.svg'

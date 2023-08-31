@@ -4,7 +4,7 @@ import { faStar, faStarHalfStroke } from '@fortawesome/free-solid-svg-icons'
 import { FontAwesomeIcon } from '@fortawesome/react-native-fontawesome'
 import { CommonActions } from '@react-navigation/native'
 import { Center, HStack, ScrollView, Text, VStack, View } from 'native-base'
-import { GalleryImages } from '@mocks/index.ts'
+import { GalleryImages } from '@mocks/index'
 
 export function RatingPage({ navigation }) {
   function handleGoBack() {

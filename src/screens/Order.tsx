@@ -1,18 +1,24 @@
 import { Header } from '@components/Header'
+import { Optional } from '@components/Optional'
 import { OptionalTitle } from '@components/OptionalTitle'
 import { SizeButton } from '@components/SizeButton'
 import { TemperatureButton } from '@components/TemperatureButton'
 import { faMinus, faPlus } from '@fortawesome/free-solid-svg-icons'
 import { FontAwesomeIcon } from '@fortawesome/react-native-fontawesome'
+import { topping, typesOfEssence, typesOfMilk } from '@mocks/index'
 import { CommonActions } from '@react-navigation/native'
 import {
   AspectRatio,
+  Box,
+  Button,
   Center,
   HStack,
   Image,
   Pressable,
+  Radio,
   ScrollView,
   Text,
+  TextArea,
   VStack,
 } from 'native-base'
 import { useState } from 'react'
@@ -27,16 +33,16 @@ export function Order({ navigation }) {
   }
 
   function handleDecrement() {
-    if (quantity > 0) {
+    if (quantity > 1) {
       setQuantity(quantity - 1)
     } else {
-      setQuantity(0)
+      setQuantity(1)
     }
   }
   return (
-    <VStack>
+    <VStack paddingBottom={100}>
       <Header goBack={handleGoBack} title="Pedido" />
-      <ScrollView px={8}>
+      <ScrollView px={8} automaticallyAdjustKeyboardInsets={true}>
         <AspectRatio>
           <Image
             source={{
@@ -116,9 +122,80 @@ export function Order({ navigation }) {
             <SizeButton title="Grande" size={36} price="+ R$ 2.00" />
           </HStack>
         </VStack>
-        <VStack py={4} space={2}>
+        <VStack
+          py={4}
+          space={2}
+          borderBottomWidth={2}
+          borderBottomColor={'gray.300'}
+        >
           <OptionalTitle title="Leite" />
+          <Radio.Group name="milkType">
+            {typesOfMilk.map((type) => (
+              <Optional title={type.name} price={type.price} key={type.id} />
+            ))}
+          </Radio.Group>
         </VStack>
+        <VStack
+          py={4}
+          space={2}
+          borderBottomWidth={2}
+          borderBottomColor={'gray.300'}
+        >
+          <OptionalTitle title="Essências" />
+          <Radio.Group name="essenceType">
+            {typesOfEssence.map((type) => (
+              <Optional title={type.name} price={type.price} key={type.id} />
+            ))}
+          </Radio.Group>
+        </VStack>
+        <VStack
+          py={4}
+          space={2}
+          borderBottomWidth={2}
+          borderBottomColor={'gray.300'}
+        >
+          <OptionalTitle title="Topping" />
+          <Radio.Group name="Topping">
+            {topping.map((type) => (
+              <Optional title={type.name} price={type.price} key={type.id} />
+            ))}
+          </Radio.Group>
+        </VStack>
+        <VStack py={4} space={2}>
+          <Text fontSize="md" fontFamily="text" fontWeight="700">
+            Observações
+          </Text>
+          <TextArea
+            h={32}
+            placeholder="Adicione as observações do seu pedido aqui"
+            w="100%"
+            autoCompleteType={'off'}
+            borderWidth={0}
+            fontFamily={'text'}
+            size={'md'}
+            placeholderTextColor={'gray.400'}
+            backgroundColor={'gray.200'}
+            _focus={{ bg: 'green.200' }}
+          />
+        </VStack>
+        <HStack alignItems={'center'} paddingBottom={100}>
+          <VStack w={'1/4'}>
+            <Text
+              fontSize="xs"
+              fontFamily="text"
+              fontWeight="400"
+              color={'gray.500'}
+            >
+              Valor total
+            </Text>
+            <Text fontSize="lg" fontFamily="text" fontWeight="700">
+              R$ 15.00
+            </Text>
+          </VStack>
+          <Button borderRadius="full" colorScheme="success" w={'3/4'}>
+            Adicionar
+          </Button>
+        </HStack>
       </ScrollView>
     </VStack>
   )

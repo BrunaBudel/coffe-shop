@@ -120,3 +120,92 @@ export const GalleryImages = [
     src: 'https://images.unsplash.com/photo-1585183575358-8c4ec97cd154?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2787&q=80',
   },
 ]
+
+export const typesOfMilk = [
+  {
+    id: 1,
+    name: 'Leite Integral',
+    price: 2,
+  },
+  {
+    id: 2,
+    name: 'Leite Desnatado',
+    price: 2,
+  },
+  {
+    id: 3,
+    name: 'Leite Sem Lactose',
+    price: 3,
+  },
+  {
+    id: 4,
+    name: 'Leite de Amêndoa',
+    price: 3,
+  },
+  {
+    id: 5,
+    name: 'Leite de Soja',
+    price: 3,
+  },
+]
+
+export const typesOfEssence = [
+  {
+    id: 1,
+    name: 'Essência de Baunilha',
+    price: 2,
+  },
+  {
+    id: 2,
+    name: 'Essência de Caramelo',
+    price: 2,
+  },
+  {
+    id: 3,
+    name: 'Essência de Chocolate',
+    price: 3,
+  },
+  {
+    id: 4,
+    name: 'Essência de Amêndoa',
+    price: 3,
+  },
+]
+
+export const topping = [
+  {
+    id: 1,
+    name: 'Canela',
+    price: 2,
+  },
+  {
+    id: 2,
+    name: 'Granulado',
+    price: 2,
+  },
+  {
+    id: 3,
+    name: 'Choco Chips',
+    price: 3,
+  },
+  {
+    id: 4,
+    name: 'Chantilly',
+    price: 3,
+  },
+  {
+    id: 5,
+    name: 'Granulado colorido',
+    price: 3,
+  },
+  {
+    id: 6,
+    name: 'Marshmallow',
+    price: 3,
+  },
+  {
+    id: 7,
+    name: 'Coco Ralado',
+    price: 3,
+  },
+]

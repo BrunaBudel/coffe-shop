@@ -2,13 +2,11 @@ import { Header } from '@components/Header'
 import { CommonActions } from '@react-navigation/native'
 import {
   AspectRatio,
-  Center,
   HStack,
   Image,
   ScrollView,
   Text,
   VStack,
-  View,
 } from 'native-base'
 
 export function Order({ navigation }) {

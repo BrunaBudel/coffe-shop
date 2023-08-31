@@ -1,10 +1,10 @@
+import { Comment } from '@components/Comment'
 import { Header } from '@components/Header'
 import { RatingAverage } from '@components/RatingAverage'
 import { faStar, faStarHalfStroke } from '@fortawesome/free-solid-svg-icons'
 import { FontAwesomeIcon } from '@fortawesome/react-native-fontawesome'
 import { CommonActions } from '@react-navigation/native'
 import { Center, HStack, ScrollView, Text, VStack } from 'native-base'
-import { GalleryImages } from '@mocks/index'
 
 const Rating = [
   {
@@ -47,7 +47,7 @@ export function RatingPage({ navigation }) {
   return (
     <VStack>
       <Header goBack={handleGoBack} title="Fotos e avaliações" />
-      <ScrollView px={8}>
+      <VStack px={8}>
         <HStack
           borderBottomWidth={2}
           borderBottomColor={'gray.300'}
@@ -78,14 +78,16 @@ export function RatingPage({ navigation }) {
             borderLeftWidth={2}
             paddingLeft={4}
           >
-            <RatingAverage starsQuantity={5} totalReviews={80} />
-            <RatingAverage starsQuantity={4} totalReviews={60} />
-            <RatingAverage starsQuantity={3} totalReviews={30} />
-            <RatingAverage starsQuantity={2} totalReviews={40} />
-            <RatingAverage starsQuantity={1} totalReviews={10} />
+            {Rating.map((item) => (
+              <RatingAverage
+                key={item.id}
+                starsQuantity={item.id}
+                totalReviews={item.totalReviews}
+              />
+            ))}
           </VStack>
         </HStack>
-      </ScrollView>
+      </VStack>
     </VStack>
   )
 }

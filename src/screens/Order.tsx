@@ -9,7 +9,6 @@ import { topping, typesOfEssence, typesOfMilk } from '@mocks/index'
 import { CommonActions } from '@react-navigation/native'
 import {
   AspectRatio,
-  Box,
   Button,
   Center,
   HStack,

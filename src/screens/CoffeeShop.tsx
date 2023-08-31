@@ -71,7 +71,7 @@ export function CoffeeShop({ navigation }) {
                   fontWeight="700"
                   color="black"
                 >
-                  4.5
+                  3.8
                 </Text>
                 <Text
                   fontSize="sm"

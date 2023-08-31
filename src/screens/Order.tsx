@@ -16,6 +16,7 @@ import {
   Pressable,
   Radio,
   ScrollView,
+  StatusBar,
   Text,
   TextArea,
   VStack,
@@ -40,6 +41,11 @@ export function Order({ navigation }: { navigation: any }) {
   }
   return (
     <VStack paddingBottom={100}>
+      <StatusBar
+        barStyle="dark-content"
+        backgroundColor="transparent"
+        translucent
+      />
       <Header goBack={handleGoBack} title="Pedido" />
       <ScrollView px={8} automaticallyAdjustKeyboardInsets={true}>
         <AspectRatio>

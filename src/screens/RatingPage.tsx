@@ -5,7 +5,7 @@ import { faStar, faStarHalfStroke } from '@fortawesome/free-solid-svg-icons'
 import { FontAwesomeIcon } from '@fortawesome/react-native-fontawesome'
 import { comments } from '@mocks/index'
 import { CommonActions } from '@react-navigation/native'
-import { Center, FlatList, HStack, Text, VStack } from 'native-base'
+import { Center, FlatList, HStack, StatusBar, Text, VStack } from 'native-base'
 
 const Rating = [
   {
@@ -47,6 +47,11 @@ export function RatingPage({ navigation }: { navigation: any }) {
   }
   return (
     <VStack paddingBottom={325}>
+      <StatusBar
+        barStyle="dark-content"
+        backgroundColor="transparent"
+        translucent
+      />
       <Header goBack={handleGoBack} title="Fotos e avaliações" />
       <VStack px={8}>
         <HStack

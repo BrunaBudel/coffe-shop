@@ -24,6 +24,9 @@ export function CoffeeShop({ navigation }) {
   function handleRatingPage() {
     navigation.navigate('RatingPage')
   }
+  function handleOpenOrderPage() {
+    navigation.navigate('Order')
+  }
   function handleGoBack() {
     navigation.dispatch(CommonActions.goBack())
   }
@@ -140,7 +143,11 @@ export function CoffeeShop({ navigation }) {
             paddingBottom={10}
           >
             {Drinks.map((item: ICoffeeDrinks) => (
-              <CoffeeCard key={item.id} data={item} />
+              <CoffeeCard
+                key={item.id}
+                data={item}
+                navigate={handleOpenOrderPage}
+              />
             ))}
           </View>
         </VStack>

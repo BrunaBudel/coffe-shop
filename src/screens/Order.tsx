@@ -1,4 +1,5 @@
 import { Header } from '@components/Header'
+import { OptionalTitle } from '@components/OptionalTitle'
 import { SizeButton } from '@components/SizeButton'
 import { TemperatureButton } from '@components/TemperatureButton'
 import { faMinus, faPlus } from '@fortawesome/free-solid-svg-icons'
@@ -114,6 +115,9 @@ export function Order({ navigation }) {
             <SizeButton title="Médio" size={24} price="+ R$ 1.00" />
             <SizeButton title="Grande" size={36} price="+ R$ 2.00" />
           </HStack>
+        </VStack>
+        <VStack py={4} space={2}>
+          <OptionalTitle title="Leite" />
         </VStack>
       </ScrollView>
     </VStack>

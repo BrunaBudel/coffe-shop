@@ -1,6 +1,7 @@
 import { Text, Pressable, Center } from 'native-base'
 
 import Cup from '@assets/coffee-cups.svg'
+import { useState } from 'react'
 
 export function SizeButton({
   title,
@@ -11,11 +12,26 @@ export function SizeButton({
   size: number
   price: string
 }) {
+  const [isPressed, setIsPressed] = useState(false)
+  function borderColors() {
+    if (isPressed) {
+      return 'emerald.500'
+    } else {
+      return 'gray.300'
+    }
+  }
+  function handlePress() {
+    if (isPressed) {
+      setIsPressed(false)
+    } else {
+      setIsPressed(true)
+    }
+  }
   return (
-    <Pressable>
+    <Pressable onPress={handlePress}>
       <Center
         borderWidth={1}
-        borderColor={'gray.300'}
+        borderColor={borderColors()}
         py={4}
         px={2}
         borderRadius={8}

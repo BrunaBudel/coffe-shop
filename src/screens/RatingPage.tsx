@@ -3,8 +3,9 @@ import { Header } from '@components/Header'
 import { RatingAverage } from '@components/RatingAverage'
 import { faStar, faStarHalfStroke } from '@fortawesome/free-solid-svg-icons'
 import { FontAwesomeIcon } from '@fortawesome/react-native-fontawesome'
+import { comments } from '@mocks/index'
 import { CommonActions } from '@react-navigation/native'
-import { Center, HStack, ScrollView, Text, VStack } from 'native-base'
+import { Center, FlatList, HStack, ScrollView, Text, VStack } from 'native-base'
 
 const Rating = [
   {
@@ -45,7 +46,7 @@ export function RatingPage({ navigation }) {
     navigation.dispatch(CommonActions.goBack())
   }
   return (
-    <VStack>
+    <VStack paddingBottom={325}>
       <Header goBack={handleGoBack} title="Fotos e avaliações" />
       <VStack px={8}>
         <HStack
@@ -88,6 +89,14 @@ export function RatingPage({ navigation }) {
           </VStack>
         </HStack>
       </VStack>
+      <FlatList
+        data={comments}
+        renderItem={({ item }) => <Comment data={item} />}
+        keyExtractor={(item: IComment) => item.id.toString()}
+        showsVerticalScrollIndicator={false}
+        px={8}
+        pt={8}
+      />
     </VStack>
   )
 }

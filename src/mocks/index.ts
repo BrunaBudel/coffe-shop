@@ -210,10 +210,10 @@ export const topping = [
   },
 ]
 
-export const comments = [
+export const comments: IComment[] = [
   {
     id: 1,
-    avatarmg:
+    avatarImg:
       'https://images.unsplash.com/photo-1494790108377-be9c29b29330?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=687&q=80',
     username: 'usuario123',
     timePassed: 'há 2 horas',
@@ -229,7 +229,7 @@ export const comments = [
   },
   {
     id: 2,
-    avatarmg:
+    avatarImg:
       'https://images.unsplash.com/photo-1603415526960-f7e0328c63b1?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1470&q=80',
     username: 'AmanteDoCafe',
     timePassed: 'há 1 dia',
@@ -245,7 +245,7 @@ export const comments = [
   },
   {
     id: 3,
-    avatarmg:
+    avatarImg:
       'https://images.unsplash.com/photo-1614289371518-722f2615943d?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=687&q=80',
     username: 'FãDoCafé',
     timePassed: 'há 3 dias',
@@ -261,7 +261,7 @@ export const comments = [
   },
   {
     id: 4,
-    avatarmg:
+    avatarImg:
       'https://images.unsplash.com/photo-1607746882042-944635dfe10e?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1470&q=80',
     username: 'BigodeDeLeite',
     timePassed: 'há 1 semana',
@@ -277,7 +277,7 @@ export const comments = [
   },
   {
     id: 5,
-    avatarmg:
+    avatarImg:
       'https://images.unsplash.com/photo-1601233749202-95d04d5b3c00?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2876&q=80',
     username: 'ViciadoNoEspresso',
     timePassed: 'há 2 semanas',

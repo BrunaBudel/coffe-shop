@@ -1,4 +1,5 @@
 import { Header } from '@components/Header'
+import { SizeButton } from '@components/SizeButton'
 import { TemperatureButton } from '@components/TemperatureButton'
 import { faMinus, faPlus } from '@fortawesome/free-solid-svg-icons'
 import { FontAwesomeIcon } from '@fortawesome/react-native-fontawesome'
@@ -109,8 +110,9 @@ export function Order({ navigation }) {
             Tamanho
           </Text>
           <HStack space={4}>
-            <TemperatureButton title="Quente" isHot />
-            <TemperatureButton title="Gelado" />
+            <SizeButton title="Pequeno" size={18} price="Free" />
+            <SizeButton title="Médio" size={24} price="+ R$ 1.00" />
+            <SizeButton title="Grande" size={36} price="+ R$ 2.00" />
           </HStack>
         </VStack>
       </ScrollView>

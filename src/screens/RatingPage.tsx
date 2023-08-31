@@ -6,7 +6,41 @@ import { CommonActions } from '@react-navigation/native'
 import { Center, HStack, ScrollView, Text, VStack } from 'native-base'
 import { GalleryImages } from '@mocks/index'
 
+const Rating = [
+  {
+    id: 1,
+    totalReviews: 10,
+  },
+  {
+    id: 2,
+    totalReviews: 30,
+  },
+  {
+    id: 3,
+    totalReviews: 40,
+  },
+  {
+    id: 4,
+    totalReviews: 60,
+  },
+  {
+    id: 5,
+    totalReviews: 80,
+  },
+]
+
 export function RatingPage({ navigation }) {
+  function ratingAverage() {
+    const totalReviews = Rating.reduce((acc, item) => {
+      return acc + item.totalReviews
+    }, 0)
+    const totalStars = Rating.reduce((acc, item) => {
+      return acc + item.totalReviews * item.id
+    }, 0)
+    const average = totalStars / totalReviews
+    return average
+  }
+
   function handleGoBack() {
     navigation.dispatch(CommonActions.goBack())
   }
@@ -22,10 +56,10 @@ export function RatingPage({ navigation }) {
         >
           <Center justifyContent={'space-between'} w={'1/2'}>
             <Text fontSize="5xl" fontFamily="text" fontWeight="700">
-              4.5
+              {ratingAverage().toFixed(1)}
             </Text>
             <HStack>
-              {[1, 2, 3, 4].map((item) => (
+              {[1, 2, 3].map((item) => (
                 <FontAwesomeIcon icon={faStar} key={item} color="#eab308" />
               ))}
               <FontAwesomeIcon icon={faStarHalfStroke} color="#eab308" />

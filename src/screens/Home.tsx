@@ -4,7 +4,7 @@ import { HeaderHome } from '@components/HeaderHome'
 import { BannerHome } from '@components/BannerHome'
 
 import { CoffeeShopCard } from '@components/CoffeeShopCard'
-import { coffeeShops, Drinks } from '@mocks/index.ts'
+import { coffeeShops, Drinks } from '@mocks/index'
 import { SwiperTitle } from '@components/SwiperTitle'
 import { CoffeeCard } from '@components/CoffeeCard'
 

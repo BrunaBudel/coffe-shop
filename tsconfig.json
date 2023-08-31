@@ -33,7 +33,10 @@
       ],
       "@routes/*": [
         "./src/routes/*"
-      ]
+      ],
+      "@mocks/*": [
+        "./src/mocks/*"
+      ],
     }
   }
 }

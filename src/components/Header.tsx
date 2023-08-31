@@ -5,10 +5,11 @@ import { faArrowLeftLong } from '@fortawesome/free-solid-svg-icons'
 import { Pressable } from 'react-native'
 
 interface IHeaderProps {
+  title: string
   goBack: () => void
 }
 
-export function Header({ goBack }: IHeaderProps) {
+export function Header({ goBack, title }: IHeaderProps) {
   return (
     <HStack
       px="8"
@@ -23,7 +24,7 @@ export function Header({ goBack }: IHeaderProps) {
       </Pressable>
       <Center>
         <Text fontSize="20" fontFamily="text" fontWeight="700">
-          Avaliações e fotos
+          {title}
         </Text>
       </Center>
       <View></View>

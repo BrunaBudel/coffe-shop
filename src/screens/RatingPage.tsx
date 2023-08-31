@@ -3,7 +3,7 @@ import { RatingAverage } from '@components/RatingAverage'
 import { faStar, faStarHalfStroke } from '@fortawesome/free-solid-svg-icons'
 import { FontAwesomeIcon } from '@fortawesome/react-native-fontawesome'
 import { CommonActions } from '@react-navigation/native'
-import { Center, HStack, ScrollView, Text, VStack, View } from 'native-base'
+import { Center, HStack, ScrollView, Text, VStack } from 'native-base'
 import { GalleryImages } from '@mocks/index'
 
 export function RatingPage({ navigation }) {
@@ -12,7 +12,7 @@ export function RatingPage({ navigation }) {
   }
   return (
     <VStack>
-      <Header goBack={handleGoBack} />
+      <Header goBack={handleGoBack} title="Fotos e avaliações" />
       <ScrollView px={8}>
         <HStack
           borderBottomWidth={2}

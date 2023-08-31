@@ -1,10 +1,15 @@
-import React from 'react'
-import { Center, Text } from 'native-base'
+import { Header } from '@components/Header'
+import { CommonActions } from '@react-navigation/native'
+import { Center, HStack, ScrollView, Text, VStack, View } from 'native-base'
 
-export function Order() {
+export function Order({ navigation }) {
+  function handleGoBack() {
+    navigation.dispatch(CommonActions.goBack())
+  }
   return (
-    <Center flex={1}>
-      <Text>Order</Text>
-    </Center>
+    <VStack>
+      <Header goBack={handleGoBack} title="Pedido" />
+      <ScrollView px={8}></ScrollView>
+    </VStack>
   )
 }

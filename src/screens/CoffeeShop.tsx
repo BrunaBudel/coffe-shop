@@ -13,7 +13,7 @@ import {
 import { CoffeeShopInfoBanner } from '@components/CoffeeShopInfoBanner'
 import { CommonActions } from '@react-navigation/native'
 import { FontAwesomeIcon } from '@fortawesome/react-native-fontawesome'
-import { faChevronRight, faPercent } from '@fortawesome/free-solid-svg-icons'
+import { faChevronRight, faUser } from '@fortawesome/free-solid-svg-icons'
 import { CoffeeCard } from '@components/CoffeeCard'
 import { Drinks } from '@mocks/index'
 
@@ -26,6 +26,9 @@ export function CoffeeShop({ navigation }: { navigation: any }) {
   }
   function handleOpenOrderPage() {
     navigation.navigate('Order')
+  }
+  function handleOpenEmployeesList() {
+    navigation.navigate('EmployeesList')
   }
   function handleGoBack() {
     navigation.dispatch(CommonActions.goBack())
@@ -115,26 +118,28 @@ export function CoffeeShop({ navigation }: { navigation: any }) {
             </HStack>
             <FontAwesomeIcon icon={faChevronRight} color="#71717a" />
           </HStack>
-          <HStack
-            justifyContent="space-between"
-            alignItems="center"
-            paddingBottom={4}
-            borderBottomWidth={2}
-            borderBottomColor={'gray.200'}
-          >
-            <HStack space={2} alignItems="center">
-              <FontAwesomeIcon icon={faPercent} color="#22c55e" size={24} />
-              <Text
-                fontSize="lg"
-                fontFamily="text"
-                fontWeight="700"
-                color="black"
-              >
-                5 ofertas disponíveis
-              </Text>
+          <Pressable onPress={handleOpenEmployeesList}>
+            <HStack
+              justifyContent="space-between"
+              alignItems="center"
+              paddingBottom={4}
+              borderBottomWidth={2}
+              borderBottomColor={'gray.200'}
+            >
+              <HStack space={2} alignItems="center">
+                <FontAwesomeIcon icon={faUser} color="#22c55e" size={24} />
+                <Text
+                  fontSize="lg"
+                  fontFamily="text"
+                  fontWeight="700"
+                  color="black"
+                >
+                  Nossos colaboradores
+                </Text>
+              </HStack>
+              <FontAwesomeIcon icon={faChevronRight} color="#71717a" />
             </HStack>
-            <FontAwesomeIcon icon={faChevronRight} color="#71717a" />
-          </HStack>
+          </Pressable>
           <View
             flexDirection="row"
             flexWrap="wrap"
